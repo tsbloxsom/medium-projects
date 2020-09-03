@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Loan Payoff</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Loan Payoff</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+      <input type="text" name="Current_Loan_Amount" placeholder="Loan Amount" required="required" /><br>
+    	<input type="text" name="Term" placeholder="Term (Short Term, Long Term)" required="required" /><br>
+        <input type="text" name="Credit_Score" placeholder="Credit Score" required="required" /><br>
+        <input type="text" name="Annual_Income" placeholder="Annual Income" required="required" /><br>
+        <input type="text" name="Years_in_current_job" placeholder="Years at Job (1 year, 2 years, etc.) " required="required" /><br>
+	<input type="text" name="Home_Ownership" placeholder="Home Ownership (Rent, Home Mortgage, Own Home)" required="required" /><br>
+	<input type="text" name="Purpose" placeholder="Purpose (Debt Consolidation, other, Home Improvements, Business Loan)" required="required" /><br>
+	<input type="text" name="Monthly_Debt" placeholder="Monthly Debt" required="required" /><br>
+	<input type="text" name="Years_of_Credit History" placeholder="Years of Credit History" required="required" /><br>
+	<input type="text" name="Months_since_last_delinquent" placeholder="Months since last delinquent" required="required" /><br>
+	<input type="text" name="Number_of_Open_Accounts" placeholder="Number of Open Accounts" required="required" /><br>
+	<input type="text" name="Number_of_Credit_Problems" placeholder="Number of Credit Problems" required="required" /><br>
+	<input type="text" name="Current_Credit_Balance" placeholder="Current Credit Balance" required="required" /><br>
+	<input type="text" name="Maximum_Open_Credit" placeholder="Maximum Open Credit" required="required" /><br>
+	<input type="text" name="Bankruptcies" placeholder="Bankruptcies" required="required" /><br>
+	<input type="text" name="Tax_Liens" placeholder="Tax Liens" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{pred}}
+
+</body>
+</html>
